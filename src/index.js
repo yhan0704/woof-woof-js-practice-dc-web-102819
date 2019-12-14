@@ -35,7 +35,7 @@ function showUpPage(e){
     container.appendChild(dogImgEl)
     dogImgEl.src = e.image
     const makeButton = document.createElement("button")
-    makeButton.id = "status"
+    makeButton.id = `button-${e.id}`
     container.appendChild(makeButton)
     
     if(e.isGoodDog){
@@ -45,15 +45,31 @@ function showUpPage(e){
         makeButton.innerText = "bad dog"
     }
     
-    makeButton.addEventListener("click", changeStatus)
+    makeButton.addEventListener("click", getFectchForStatus)
     
 }
 
-function changeStatus(e){
+function getFectchForStatus(e){
+    // debugger\
+    const anything = "false"
+    const getId = e.target.id.split("-")[1]
     if(e.target.innerText === "good dog"){
         e.target.innerText = "bad dog"
+        anything
     }
     else{
         e.target.innerText = "good dog"
+        anything = "true"
     }
+    
+    fetch(`http://localhost:3000/pups/${getId}`,{
+        method: "PATCH", 
+        headers: {"Content-Type": "application/json",
+        Accept: "application/json" 
+        },
+        body: JSON.stringify({"isGoodDog": anything})
+    })
+    
+
+
 }

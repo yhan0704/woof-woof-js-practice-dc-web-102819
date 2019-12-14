@@ -9,32 +9,34 @@
     {
       "id": 2,
       "name": "Nugget",
-      "isGoodDog": false,
+      "isGoodDog": "bad dog",
       "image": "https://curriculum-content.s3.amazonaws.com/js/woof-woof/dog_2.jpg"
     },
     {
       "id": 3,
       "name": "Skittles",
-      "isGoodDog": true,
+      "isGoodDog": "false",
       "image": "https://curriculum-content.s3.amazonaws.com/js/woof-woof/dog_3.jpg"
     },
     {
       "id": 4,
       "name": "Buttercup",
-      "isGoodDog": false,
+      "isGoodDog": "bad dog",
       "image": "https://curriculum-content.s3.amazonaws.com/js/woof-woof/dog_4.jpg"
     },
     {
       "id": 5,
       "name": "Lucipher",
-      "isGoodDog": false,
-      "image": "https://curriculum-content.s3.amazonaws.com/js/woof-woof/dog_5.jpg"
+      "isGoodDog": "good dog",
+      "image": "https://curriculum-content.s3.amazonaws.com/js/woof-woof/dog_5.jpg",
+      "status": "good dog"
     },
     {
       "id": 6,
       "name": "Snooper Pooper",
-      "isGoodDog": false,
-      "image": "https://curriculum-content.s3.amazonaws.com/js/woof-woof/dog_6.jpg"
+      "isGoodDog": "bad dog",
+      "image": "https://curriculum-content.s3.amazonaws.com/js/woof-woof/dog_6.jpg",
+      "status": "bad dog"
     },
     {
       "id": 7,
@@ -51,13 +53,13 @@
     {
       "id": 9,
       "name": "Middens",
-      "isGoodDog": true,
+      "isGoodDog": "false",
       "image": "https://curriculum-content.s3.amazonaws.com/js/woof-woof/dog_2.jpg"
     },
     {
       "id": 10,
       "name": "Fido",
-      "isGoodDog": true,
+      "isGoodDog": "false",
       "image": "https://curriculum-content.s3.amazonaws.com/js/woof-woof/dog_5.jpg"
     }
   ]
