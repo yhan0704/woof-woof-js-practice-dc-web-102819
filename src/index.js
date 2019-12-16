@@ -39,7 +39,7 @@ function showUpPage(e){
     makeButton.id = `button-${e.id}`
     container.appendChild(makeButton)
     
-    if(e.isGoodDog === "true"){
+    if(e.isGoodDog){
         makeButton.innerText = "good dog"
     }
     else{
@@ -51,7 +51,7 @@ function showUpPage(e){
 }
 
 function getFectchForStatus(e){
-    let anything = "false"
+    const anything = "false"
     const getId = e.target.id.split("-")[1]
     if(e.target.innerText === "good dog"){
         e.target.innerText = "bad dog"
@@ -74,32 +74,9 @@ function getFectchForStatus(e){
 function filterDog(e){
     if(e.target.innerText === "Filter good dogs: OFF"){
         e.target.innerText = "Filter good dogs: On"
-        fetch(`http://localhost:3000/pups`)
-        .then(res => res.json())
-        .then(data => showFilteredGoodDog(data))  
     }
     else{
-        e.target.innerText = "Filter good dogs: OFF"
-        fetch(`http://localhost:3000/pups`)
-        .then(res => res.json())
-        .then(data => showFilteredBadDog(data))  
+        e.target.innerText = "Filter good dogs: On"
     }
-}
-
-function showFilteredGoodDog(e){
-    
-    e.forEach(x => { 
-        if (x.isGoodDog === "true"){
-            showUpPage(x)  
-        }
-    })
-}
-
-function showFilteredBadDog(e){
-    e.forEach(x => { 
-        if (x.isGoodDog === "false"){
-            showUpPage(x)  
-        }
-    })
 }
 
