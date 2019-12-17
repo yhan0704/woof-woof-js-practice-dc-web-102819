@@ -22,7 +22,6 @@ function renderDog(e){
 
 function dogInfo(e){
     const container = document.getElementById("dog-info")
-    container.innerHTML = "";
     const getId = e.target.id.split("-")[1]
     fetch(`http://localhost:3000/pups/${getId}`)
     .then(res => res.json())
@@ -31,7 +30,6 @@ function dogInfo(e){
 
 function showUpPage(e){
     const container = document.getElementById("dog-info")
-    // container.innerHTML = "";
     const dogNameEl = document.createElement("h2")
     container.appendChild(dogNameEl)
     dogNameEl.innerText = e.name
@@ -75,7 +73,6 @@ function getFectchForStatus(e){
 
 function filterDog(e){
     const container = document.getElementById("dog-info")
-    container.innerHTML = "";
     if(e.target.innerText === "Filter good dogs: OFF"){
         e.target.innerText = "Filter good dogs: On"
         fetch(`http://localhost:3000/pups`)
@@ -84,7 +81,6 @@ function filterDog(e){
     }
     else{
         const container = document.getElementById("dog-info")
-        container.innerHTML = "";
         e.target.innerText = "Filter good dogs: OFF"
         fetch(`http://localhost:3000/pups`)
         .then(res => res.json())
